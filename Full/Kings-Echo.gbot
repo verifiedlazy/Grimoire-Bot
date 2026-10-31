@@ -4382,27 +4382,27 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
         "Tag": "Map",
         "Text": "Map is not",
-        "Value1": "chaoswar",
+        "Value1": "chaosboss",
         "Value2": ""
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-        "Map": "chaoswar",
+        "Map": "chaosboss",
         "Room": "2608",
-        "Cell": "r16",
-        "Pad": "Right"
+        "Cell": "r2",
+        "Pad": "Spawn"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
         "Tag": "Map",
         "Text": "Cell is not",
-        "Value1": "r16",
+        "Value1": "r2",
         "Value2": ""
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "r16",
-        "Pad": "Right"
+        "Cell": "r2",
+        "Pad": "Spawn"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
@@ -4412,12 +4412,12 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMonsterInRoom, Grimoire",
         "Tag": "Monster",
         "Text": "Is in room",
-        "Value1": "Chaos Knight",
+        "Value1": "Ultra Chaos Warlord",
         "Value2": ""
       },
       {
         "$type": "Grimoire.Botting.Commands.Combat.CmdKill, Grimoire",
-        "Monster": "Chaos Knight"
+        "Monster": "Ultra Chaos Warlord"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
