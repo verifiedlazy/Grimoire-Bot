@@ -25,7 +25,7 @@ The collection avoids membership-only maps. `shattersword` and `gravechallenge` 
 
 - Alchemy bots stop at 100 of each reagent they check. The person mixes, banks, and starts the bot again. The stop text says the wiki mixes are guesswork.
 - King's Echo is not bought by the bot. Alden's Mace is not bought by the bot. Bocklin merges are not performed by the bot. Those are stop messages.
-- A saved quest in King's Echo and in the Adeptus files is accepted and turned in by the bot, except Defiled Destiny, which is accepted only.
+- A saved quest in King's Echo and in the Misc Items files is accepted and turned in by the bot, except Defiled Destiny, which is accepted only.
 - Owning an intermediate King's Echo item changes which farm branch runs. Read the file. Do not raise a shard or ornament count because an armor is owned.
 - Gold vouchers are not drop farms.
 - A count below the required quantity is not done. A quest temp such as 9/50 is not done.

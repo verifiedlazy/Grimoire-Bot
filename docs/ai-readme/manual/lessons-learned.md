@@ -12,23 +12,23 @@
 | Adeptus file fails `validate_gbot.py` | Those files predate the quantity-pair rules. Missing `Check`, case-mismatched gotos, or a dead empty `QuestID` | Do not rewrite them unless that was the task |
 | King's Echo door farm cannot start | Defiled Destiny was completed, or never accepted | The file accepts `9369` and does not complete it |
 
-## Known file mismatches
+### Known file mismatches
 
 Observed while documenting. Not fixed, because the task was documentation.
 
 | File | What the file does | Why it matters |
 | --- | --- | --- |
-| `Adeptus Kathooli/Sun Zone Chit.gbot` | Stop condition is `Sundered Tentacle` 200. `Check` exists and is not reached from the start. Validator warned, then passed | Do not treat the stop item as confirmed |
-| `Adeptus Kathooli/Water Elf Antler.gbot` | Labels are `Main`, `ScavengerFoam`, `AdipocereAntler`. Later gotos use `MAIN`, `SCAVENGERFOAM`, `ADIPOCEREANTLER`. Room is `1`, not `2608`. Validator failed | Case must match. Do not assume Grimoire ignores case |
-| `Adeptus Kathooli/Sundered Tentacle.gbot` | A `CmdQuestlist` with an empty `QuestID` sits after `goto MAIN`, so it is not on the live path. Validator still flags the empty ID. Live ID is `9269` | Do not copy the empty command |
-| `Adeptus Kathooli/Sundered Tentacle.gbot` | Leviathan join pad is `Left`. The following move pad is `Right` | Do not "align" them unless the user confirms the pad |
-| Adeptus kills | Several `CmdKill` values are `*` while `CmdMonsterInRoom` names one monster | Leave it unless the user asks |
+| `Misc Items/Sun Zone Chit.gbot` | Stop condition is `Sundered Tentacle` 200. `Check` exists and is not reached from the start. Validator warned, then passed | Do not treat the stop item as confirmed |
+| `Misc Items/Water Elf Antler.gbot` | Labels are `Main`, `ScavengerFoam`, `AdipocereAntler`. Later gotos use `MAIN`, `SCAVENGERFOAM`, `ADIPOCEREANTLER`. Room is `1`, not `2608`. Validator failed | Case must match. Do not assume Grimoire ignores case |
+| `Misc Items/Sundered Tentacle.gbot` | A `CmdQuestlist` with an empty `QuestID` sits after `goto MAIN`, so it is not on the live path. Validator still flags the empty ID. Live ID is `9269` | Do not copy the empty command |
+| `Misc Items/Sundered Tentacle.gbot` | Leviathan join pad is `Left`. The following move pad is `Right` | Do not "align" them unless the user confirms the pad |
+| Misc Items kills | Several `CmdKill` values are `*` while `CmdMonsterInRoom` names one monster | Leave it unless the user asks |
 | Alchemy stop messages | Each one says the wiki mixes are guesswork | Do not document a mix as confirmed |
 
 Validator result while writing these docs, `validate_gbot.py` without `--strict`:
 
-- Passed: all 7 Alchemy files, `Full/Kings-Echo.gbot`, and `Sun Zone Chit.gbot` with warnings.
-- Failed: the other five Adeptus files. Dark Elf Pearl, Sur-gion Token, and Water Elf Pearl failed on a missing `Check` label. Sundered Tentacle also failed on the empty quest ID. Water Elf Antler failed on undefined gotos and a loop with no exit.
+- Passed: `Full/Kings-Echo.gbot`, and `Sun Zone Chit.gbot` with warnings.
+- Failed: the other five Misc Items files. Dark Elf Pearl, Sur-gion Token, and Water Elf Pearl failed on a missing `Check` label. Sundered Tentacle also failed on the empty quest ID. Water Elf Antler failed on undefined gotos and a loop with no exit.
 
 ## Decisions
 

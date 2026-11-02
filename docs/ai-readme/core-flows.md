@@ -6,42 +6,8 @@
 
 | Priority | Flow | Entry point | Evidence |
 | --- | --- | --- | --- |
-| P0 | Alchemy stack farm | `CmdGotoLabel Check` at the start of each Alchemy file | `Alchemy/Potion-Revitalize.gbot` |
 | P0 | King's Echo staged farm | `MAIN` to `HANDLE`, with ownership branches and three manual stops | `Full/Kings-Echo.gbot` |
-| P1 | Adeptus quest loop | `MAIN`, then `HANDLE`, then a farm label | `Adeptus Kathooli/Dark Elf Pearl.gbot` |
-
-## Flow: Alchemy stack farm
-
-```mermaid
-sequenceDiagram
-  participant Bot
-  participant Bank
-  participant Map
-  Bot->>Bank: Check transfers each reagent once
-  Bank-->>Bot: goto HANDLE
-  Bot->>Bot: quantity pair, inventory then temp
-  alt still short
-    Bot->>Map: join room 2608, move, kill
-    Map-->>Bot: loop to the farm label
-  else stack is 100
-    Bot->>Bot: next reagent, or STOP
-  end
-```
-
-### Call chain
-
-1. Start delay, then `goto Check`. `MAIN` also goes to `Check`.
-2. `Check` — `CmdInBank` then `CmdBankTransfer` for each reagent, then `goto HANDLE`.
-3. `HANDLE` — for each reagent, `CmdNotInInventory` at `"100"`, goto `T_*`, else goto `A_*`.
-4. `T_*` — `CmdNotInTemp` at `"100"`. If short, goto the farm label.
-5. Farm label — pick up the drop, repeat the pair, kill, goto the farm label.
-6. When every `A_*` is reached, goto `STOP`. The stop beeps and tells the user to mix, bank, and rerun.
-
-### Key branches
-
-- The bot does not open the Alchemy UI and does not mix.
-- Stop text in every Alchemy file says the wiki mixes are guesswork.
-- A kill does not return to `Check`.
+| P0 | Misc Items quest loop | `MAIN`, then `HANDLE`, then a farm label | `Misc Items/Dark Elf Pearl.gbot` |
 
 ## Flow: King's Echo
 
@@ -77,7 +43,7 @@ flowchart TD
 - After a turn-in, the file returns to that stage. It does not send every kill back to `Check`.
 - Gold vouchers and the mace are not drop farms.
 
-## Flow: Adeptus quest loop
+## Flow: Misc Items quest loop
 
 ```mermaid
 sequenceDiagram
@@ -102,13 +68,11 @@ sequenceDiagram
 
 ### Key branches
 
-- Several Adeptus kills use `Monster` `*` while `CmdMonsterInRoom` names a specific monster. That is what the file contains. Do not "correct" it unless the user asks.
+- Several Misc Items kills use `Monster` `*` while `CmdMonsterInRoom` names a specific monster. That is what the file contains. Do not "correct" it unless the user asks.
 - `Sun Zone Chit.gbot` stops on `Sundered Tentacle` 200, not on Sun Zone Chit. Treat that as a known mismatch, not as the intended stop, and do not silently change it.
 - `Water Elf Antler.gbot` gotos `MAIN`, `SCAVENGERFOAM`, and `ADIPOCEREANTLER` do not match the labels `Main`, `ScavengerFoam`, and `AdipocereAntler`.
 - `Sundered Tentacle.gbot` has a `CmdQuestlist` with an empty `QuestID` after a goto, so that command is not on the live path. The live quest ID in that file is `9269`.
-
+- `Sundered Tentacle.gbot` has a Leviathan join pad of `Left` while the following move pad is `Right`. Do not "align" them unless the user confirms the pad.
 ## Evidence
 
-- `Alchemy/Potion-Revitalize.gbot`
-- `Full/Kings-Echo.gbot` labels and the four stop messages
-- `Adeptus Kathooli/Dark Elf Pearl.gbot`, `Sun Zone Chit.gbot`, `Sundered Tentacle.gbot`, `Water Elf Antler.gbot`
+- `Misc Items/Dark Elf Pearl.gbot`, `Sun Zone Chit.gbot`, `Sundered Tentacle.gbot`, `Water Elf Antler.gbot`

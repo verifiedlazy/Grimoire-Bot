@@ -25,9 +25,8 @@ Read those before broad exploration. Do not treat this file, or any number in it
 
 ## Key Directories
 
-- `Adeptus Kathooli/` — six quest-turn-in bots. Most do not match the newer quantity-pair layout.
-- `Alchemy/` — seven stack farms. Each stops at 100 and tells the user to mix, bank, and rerun.
-- `Full/` — `Kings-Echo.gbot`, the only full class bot.
+- `Misc Items/` — quest-turn-in bots for miscellaneous reagents.
+- `Full/` — class bots including `Kings-Echo.gbot` and `Scion-of-Flames.gbot`.
 - `docs/ai-readme/` — notes for the next agent. Not loaded automatically.
 
 ## Boundaries and Constraints
@@ -37,7 +36,5 @@ Read those before broad exploration. Do not treat this file, or any number in it
 - Do not copy a cell or quest ID from another file, from these docs, from the wiki, or from memory.
 - Do not write injectors, packet editors, memory readers, or account tools.
 - Do not add farms on membership-only maps. This collection does not use `shattersword` or `gravechallenge`.
-- Alchemy stop text says the wiki mixes are guesswork. Do not treat a mix recipe in a stop message as verified.
-- King's Echo stops for the class buy, Alden's Mace, and the Bocklin merge are intentional. Do not automate those stops.
 - `Full/Kings-Echo.gbot` accepts quest ID `9369` (Defiled Destiny, the Infernal Arena door) and does not complete it. Leave that alone unless the user asks.
 - New bots are not added to this tree unless the user asks to add a reviewed file here.

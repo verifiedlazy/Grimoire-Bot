@@ -56,13 +56,13 @@ If the user says a map is membership-only, do not ask for that map again. This c
 ## Command rules
 
 - An `If` guards only the next command. Never put a label immediately after a statement.
-- On Alchemy files and `Full/Kings-Echo.gbot`, keep the quantity pair: `CmdNotInInventory`, goto the temp label, goto the after label. The temp label is `CmdNotInTemp` with the same quantity string. The two gotos must not share a label.
+- On `Full/Kings-Echo.gbot`, keep the quantity pair: `CmdNotInInventory`, goto the temp label, goto the after label. The temp label is `CmdNotInTemp` with the same quantity string. The two gotos must not share a label.
 - `Check` runs once at start. A kill loops to its farm label. When the quantity is met, go to the next item in that stage, not back to `Check`.
 - Accept a saved quest when it is not in progress. Complete it only when it can be turned in. After a turn-in, return to that stage. Do not add a stop that tells the user to turn the quest in and restart.
 - Quest ID `9369` in `Full/Kings-Echo.gbot` is the Infernal Arena door. The file accepts it and does not complete it. Do not add a complete command for it.
 - Private room `2608` stays, except `Water Elf Antler.gbot`, which already uses room `1`. Do not change that room unless the user asks.
 - Use exact item names, including apostrophes and `(1)`.
-- Adeptus files use a different loop. Do not rewrite them into the quantity-pair layout unless the user asks.
+- Misc Items files use a different loop. Do not rewrite them into the quantity-pair layout unless the user asks.
 
 ## How to save the edit
 

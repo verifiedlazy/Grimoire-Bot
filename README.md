@@ -11,13 +11,12 @@ Load a `.gbot` in Grimoire. There is nothing to install, build, or run from this
 
 ## What is here
 
-| Folder | Files | What they do |
-| --- | --- | --- |
-| `Adeptus Kathooli/` | 6 | Quest turn-in farms for Adeptus Kathooli reagents |
-| `Alchemy/` | 7 | Farm reagent stacks to 100, then stop so a person can mix and bank |
-| `Full/` | 1 | King's Echo class farm, including nested merges and saved quests |
+| Folder | What they do |
+| --- | --- |
+| `Misc Items/` | Quest turn-in farms for miscellaneous reagents |
+| `Full/` | Class farms including nested merges and saved quests |
 
-Alchemy and `Full/Kings-Echo.gbot` passed the `grimoire-aqw-bot` structure check used while these docs were written. Most Adeptus files did not. "Fixed" means this is the reviewed collection, not that every file passes that check. Details are in [docs/ai-readme/manual/lessons-learned.md](docs/ai-readme/manual/lessons-learned.md).
+`Full/Kings-Echo.gbot` passed the `grimoire-aqw-bot` structure check used while these docs were written. "Fixed" means this is the reviewed collection, not that every file passes that check. Details are in [docs/ai-readme/manual/lessons-learned.md](docs/ai-readme/manual/lessons-learned.md).
 
 ## For another agent
 

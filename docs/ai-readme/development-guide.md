@@ -55,7 +55,7 @@ There is no `.env` in this project. Do not add one for quest IDs or cells.
 - [ ] `CmdCompleteQuest2` stays behind a `CmdQuestCompleted` check
 - [ ] No new cell or quest ID was invented
 
-Alchemy and `Full/Kings-Echo.gbot` passed `validate_gbot.py` without `--strict` when these docs were written. Adeptus files mostly failed. Do not "fix" those failures unless the user asks. See `docs/ai-readme/manual/lessons-learned.md`.
+Alchemy and `Full/Kings-Echo.gbot` passed `validate_gbot.py` without `--strict` when these docs were written. Misc Items (formerly Adeptus) files mostly failed. Do not "fix" those failures unless the user asks. See `docs/ai-readme/manual/lessons-learned.md`.
 
 ## Evidence
 

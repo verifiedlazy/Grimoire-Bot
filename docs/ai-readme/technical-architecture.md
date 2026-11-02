@@ -43,7 +43,7 @@ Taken from the `grimoire-aqw-bot` validator, and matched against these files:
 
 ### Quantity pair
 
-Used by every file in `Alchemy/` and by `Full/Kings-Echo.gbot`.
+Used by `Full/Kings-Echo.gbot`. (The former `Alchemy/` files used this layout; they are no longer in this tree.)
 
 ```text
 CmdNotInInventory  item, required quantity
@@ -62,9 +62,9 @@ The two gotos must not share a label. If they do, the bot cannot see that it alr
 
 A farm label repeats that pair (`Still` / kill / after). The kill loops to the farm label, not to `Check`. `Check` transfers from the bank once, then goes to `HANDLE`.
 
-### Adeptus turn-in loop
+### Misc Items turn-in loop
 
-Used by `Adeptus Kathooli/`. This is not the quantity-pair layout. Do not convert it unless the user asks.
+Used by `Misc Items/`. This is not the quantity-pair layout. Do not convert it unless the user asks.
 
 ```text
 label MAIN
@@ -106,7 +106,7 @@ Most of these files have no `Check` label. `Sun Zone Chit.gbot` has one, and the
 
 ## Evidence
 
-- `Alchemy/Potion-Revitalize.gbot` for the quantity pair, `Check`, and farm loop
-- `Adeptus Kathooli/Dark Elf Pearl.gbot` for the Adeptus loop
+- `Full/Kings-Echo.gbot` for the quantity pair, `Check`, and farm loop
+- `Misc Items/Dark Elf Pearl.gbot` for the Misc Items turn-in loop
 - `Full/Kings-Echo.gbot` labels `HANDLE`, `Check`, `T_*`, `A_*`, `STOP_BUY_CLASS`, `STOP_MACE`, `STOP_MERGE`
 - `grimoire-aqw-bot` references `gbot-structure.md` and `common-patterns.md` for the intended pair. Those references are not in this repo.
